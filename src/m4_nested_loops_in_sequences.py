@@ -3,8 +3,8 @@ This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of SEQUENCES OF SUB-SEQUENCES.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Rui Fang.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -103,6 +103,10 @@ def run_test_multiply_numbers():
 
 
 def multiply_numbers(sequence_of_lists):
+    for k in range(len(sequence_of_lists)):
+        l = sequence_of_lists[k]
+        for i in range(len(l)):
+            l[i] = l[i] * (k+1)
     """
     In the given sequence of lists,
       -- multiplies each element of the first list by 1,
@@ -117,7 +121,7 @@ def multiply_numbers(sequence_of_lists):
        [FYI: This 'can be multiplied ...' is an example of DUCK TYPING.]
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
     #  ** ASK QUESTIONS if you do not understand the TESTS (ABOVE).
     #
@@ -165,8 +169,14 @@ def sum_numbers(seq_seq):
     Preconditions:  the given argument is a sequences of sequences,
                     and each item in the subsequences is a number.
     """
+    sum = 0
+    for k in range(len(seq_seq)):
+        l = seq_seq[k]
+        for i in range(len(l)):
+            sum = sum + l[i]
+    return sum
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
 
@@ -198,6 +208,10 @@ def run_test_print_characters():
 
 
 def print_characters(sequence_of_strings):
+    for k in range(len(sequence_of_strings)):
+        s = sequence_of_strings[k]
+        for i in range(len(s)):
+            print(s[i])
     """
     Prints all the characters in the sequence of strings,
     but each character on ITS OWN LINE.  For example,
@@ -217,7 +231,7 @@ def print_characters(sequence_of_strings):
     Precondition:  the given argument is a sequence of strings.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
     #  ** ASK QUESTIONS if you do not understand the TESTS (ABOVE).
     # ------------------------------------------------------------------
@@ -269,8 +283,13 @@ def print_characters_slanted(sequence_of_strings):
             !
     Precondition:  the given argument is a sequence of strings.
     """
+    for k in range(len(sequence_of_strings)):
+        s = sequence_of_strings[k]
+        for i in range(len(s)):
+            print(i * ' ', end=s[i])
+            print()
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
     #  ** ASK QUESTIONS if you do not understand the TESTS (ABOVE).
     #
